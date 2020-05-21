@@ -126,13 +126,26 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+/* VARIABLES */
+/* MIXINS */
+.flex {
+  display: flex;
+  flex-flow: row wrap;
+}
+.sectionStyle {
+  max-width: 800px;
+  box-sizing: border-box;
+}
 /* Set every element's box-sizing to border-box */
 * {
   box-sizing: border-box;
 }
 html {
   font-size: 62.5%;
+  font-family: "Merriweather", serif;
   width: 800px;
+  max-width: 100%;
+  overflow-x: hidden;
   margin: 0 auto;
 }
 h1 {
@@ -168,12 +181,13 @@ ol {
 }
 body {
   font-size: 1.6rem;
+  width: 100%;
 }
 /* Header Section */
 header {
-  width: 100%;
   max-width: 800px;
   box-sizing: border-box;
+  display: [object Object],[object Object];
 }
 header .navbar {
   width: 100%;
@@ -181,11 +195,24 @@ header .navbar {
   display: flex;
   justify-content: flex-end;
 }
+@media (max-width: 500px) {
+  header .navbar {
+    width: 100%;
+    flex-flow: column wrap;
+    justify-content: center;
+  }
+}
 header .navlist {
   display: flex;
   width: 60%;
   flex-direction: row;
   justify-content: space-between;
+}
+@media (max-width: 500px) {
+  header .navlist {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 header .navlist a {
   display: flex;
@@ -197,13 +224,16 @@ header .navlist a {
 }
 /* Upper Box Section */
 .container {
-  width: 100%;
   max-width: 800px;
   box-sizing: border-box;
-  display: flex;
-  flex-flow: row wrap;
+  display: [object Object],[object Object];
   background-color: lightgrey;
   border-radius: 20px;
+}
+@media (max-width: 500px) {
+  .container {
+    width: 500px;
+  }
 }
 .container .image {
   display: flex;
@@ -211,6 +241,11 @@ header .navlist a {
   margin: 0 auto;
   padding: 2%;
   border-radius: 20px;
+}
+@media (max-width: 500px) {
+  .container .image {
+    width: 100%;
+  }
 }
 .container h1 {
   width: 100%;
@@ -237,7 +272,6 @@ header .navlist a {
 .lower .hangout {
   background-color: gray;
   margin: 0 10px;
-  display: inline-block;
   padding: 20px;
   border: 1px solid lightgray;
   font-size: 2rem;
@@ -246,29 +280,39 @@ header .navlist a {
 }
 /* Middle Section */
 .middle-content {
-  width: 100%;
   max-width: 800px;
   box-sizing: border-box;
   margin-bottom: 10px;
   padding: 10px;
   display: flex;
 }
+@media (max-width: 500px) {
+  .middle-content {
+    display: inline-block;
+  }
+}
 .middle-content .about {
-  width: 50%;
-  padding: 5px;
-  display: flex;
-  flex-flow: row wrap;
+  display: [object Object],[object Object];
   justify-content: flex-start;
+  width: 50%;
+  max-width: 800px;
+  padding: 5px;
 }
 .middle-content .about p {
   font-size: 1.8rem;
 }
 .skillslist {
   display: flex;
-  flex-flow: column nowrap;
+  flex-flow: column wrap;
   width: 50%;
+  max-width: 800px;
   padding: 5px;
   justify-content: flex-start;
+}
+@media (max-width: 500px) {
+  .skillslist {
+    width: 100%;
+  }
 }
 .skillslist li {
   border: 1px solid #dddddd;
@@ -279,35 +323,42 @@ header .navlist a {
 }
 /* Bottom Section */
 .bottom-content {
-  width: 800px;
+  max-width: 800px;
+  box-sizing: border-box;
 }
-.table {
+.bottom-content .table {
   width: 100%;
   font-size: 1.8rem;
   border-collapse: collapse;
   margin-bottom: 20px;
 }
-.table td,
-.table th {
+@media (max-width: 500px) {
+  .bottom-content .table {
+    width: 45%;
+  }
+}
+.bottom-content .table td,
+.bottom-content .table th {
   text-align: left;
   padding: 10px;
 }
-tr th {
+.bottom-content tr th {
   font-weight: bold;
   font-size: 2rem;
   border-top: 1px solid #dddddd;
   border-bottom: 1px solid #dddddd;
 }
-tr:nth-child(even) {
+.bottom-content tr:nth-child(even) {
   background-color: #dddddd;
 }
 /* Footer Section */
 .shoebox {
   max-width: 800px;
+  width: 100%;
 }
 .shoebox div {
   display: flex;
-  background-color: gainsboro;
+  background-color: #dddddd;
   color: whitesmoke;
   padding: 20px;
   justify-content: space-between;
@@ -318,7 +369,8 @@ tr:nth-child(even) {
   display: flex;
   border-radius: 10px;
   width: 100%;
-  padding: 5px;
+  padding: 10px;
+  margin: 0 auto;
   text-decoration: none;
   font-size: 2rem;
   text-transform: uppercase;
@@ -326,13 +378,11 @@ tr:nth-child(even) {
   color: whitesmoke;
 }
 .shoebox .contact a:hover {
-  background: aliceblue;
   color: black;
 }
 .footnav p {
   /*This is the Follow Me text */
-  display: flex;
-  flex-flow: row wrap;
+  display: [object Object],[object Object];
   justify-content: center;
   font-size: 2rem;
   color: black;
@@ -350,6 +400,6 @@ tr:nth-child(even) {
   font-size: 2rem;
   margin: 20px;
 }
-.socnav .fa .socnav a {
+.socnav a {
   text-decoration: none;
 }
