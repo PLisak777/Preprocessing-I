@@ -1,0 +1,31 @@
+.bottom-content {
+    .sectionStyle;
+
+    .table {
+        width: 100%;
+        font-size: 1.8rem;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+
+        @media (max-width: 500px) {
+            width: 45%;
+        }
+
+        td,
+        th {
+            text-align: left;
+            padding: 10px;
+        }
+    }
+
+    tr th {
+        font-weight: bold;
+        font-size: @fontSize;
+        border-top: 1px solid #dddddd;
+        border-bottom: 1px solid #dddddd;
+    }
+
+    tr:nth-child(even) {
+        background-color: @bgColor;
+    }
+}

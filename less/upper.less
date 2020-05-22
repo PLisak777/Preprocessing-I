@@ -1,0 +1,58 @@
+.container {
+    .sectionStyle();
+    display: .flex();
+    background-color: lightgrey;
+    border-radius: 20px;
+
+    @media (max-width: 500px) {
+        width: 500px;
+    }
+
+    .image {
+        display: flex;
+        width: 50%;
+        margin: 0 auto;
+        padding: 2%;
+        border-radius: 20px;
+
+        @media (max-width: 500px) {
+            width: 100%;
+        }
+    }
+
+    h1 {
+        width: 100%;
+        margin: 2%;
+        padding-top: 2%;
+        font-size: 5rem;
+    }
+
+    h3 {
+        width: 100%;
+        margin: 2%;
+        padding-bottom: 2%;
+        font-size: 3rem;
+        border-bottom: 1px dashed black;
+    }
+}
+
+.lower {
+    width: 100%;
+    margin: 0 10px;
+    padding: 2%;
+
+    p {
+        font-size: 2.5rem;
+        margin-bottom: 2%;
+    }
+
+    .hangout {
+        background-color: gray;
+        margin: 0 10px;
+        padding: 20px;
+        border: 1px solid lightgray;
+        font-size: @fontSize;
+        border-radius: 20px;
+        color: white;
+    }
+}

@@ -1,0 +1,38 @@
+header {
+    .sectionStyle();
+    display: .flex();
+
+    .navbar {
+        width: 100%;
+        margin: 10px;
+        display: flex;
+        justify-content: flex-end;
+
+        @media (max-width: 500px) {
+            width: 100%;
+            flex-flow: column wrap;
+            justify-content: center;
+        }
+    }
+
+    .navlist {
+        display: flex;
+        width: 60%;
+        flex-direction: row;
+        justify-content: space-between;
+
+        @media (max-width: 500px) {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    .navlist a {
+        display: flex;
+        font-size: @fontSize;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: black;
+        margin: 5px;
+    }
+}
